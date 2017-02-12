@@ -1,0 +1,14 @@
+hardstatus alwayslastline                                                                                                                          
+#hardstatus string '%{= kw}%-Lw%{= KW}%50>%{=b g}[%{= kw}%n%f%{=b w}%t%{=b g}]%{= mK}%+Lw%< %{= kG}%-=|%1 %2` %c%{-}'
+hardstatus string '%{= kw}%-Lw%{= KW}%50>%{=b g}[%{= kw}%n%f%{=b w}%t%{=b g}]%{-}%{= k w}%+Lw%< %{= kw}%-= %{=b g}[%{= kw}%3`%{=b g}]%{= kw} %1` %2` %{=b w}%c%{= kw}'
+screen -t demo       1
+screen -t root	     2
+screen -t install    3
+screen -t E-Mail     4
+
+vbell_msg "[[[ ding ding ]]]"
+
+#backtick id life autorefresh cmd
+#backtick 1 0 0 /home/demo/bin/netload
+#backtick 2 60 60 /home/demo/bin/load
+#backtick 3 10 20 /home/demo/bin/vpnup
