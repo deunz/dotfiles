@@ -130,7 +130,7 @@ function git-branch-name
 function git-branch-prompt 
 {
     local branch=`git-branch-name`
-    if [ $branch ]; then printf " [%s]" $branch; fi
+    if [ $branch ]; then printf "\033[1;32m\](%s)\[\033[0;m\]" $branch; fi
 }
 
 # mode
@@ -154,8 +154,30 @@ thedevmode()
 }
 
 
-alias modedev="thedevmode"
-alias modeshell="theshellmode"
+alias devmode="thedevmode"
+alias shellmode="theshellmode"
 
-modeshell
+shellmode
 alias docker="sudo docker"
+
+alias vault="http_proxy='' vault"
+alias openssl_pkcs12_info="openssl pkcs12 -noout -info -in"
+alias keytool_view="keytool --list -v -keystore"
+
+# alias for openssl
+alias opensslview='openssl x509 -noout -text -in '
+alias opensslviewder='openssl x509 -noout -text -inform DER -in '
+alias opensslviewcsr='openssl req -noout -text -in '
+export CDPATH=".:~:~/work"
+export TERM=xterm-256color
+alias xterm="xterm -fa 'Source Code Pro for Powerline,Sauce Code Powerline:style=Regular,Bold' -fs 11"
+
+function powerline_daemon_check()
+{
+    if [ ! `pgrep -f 'powerline-daemon' 2>&1 > /dev/null` ]
+    then
+        powerline-daemon -q
+    fi
+}
+powerline_daemon_check
+
