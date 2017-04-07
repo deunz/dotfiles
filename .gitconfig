@@ -1,0 +1,32 @@
+[user]
+        name = Deunz
+        email = deunz@example.com
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[alias]
+        co = checkout
+        di = diff
+        ci = commit
+        st = status -s
+        br = branch
+        hist = log --pretty=format:\"%Cred%h%Creset %ad%C(yellow)%d%Creset | %s%d %C(green)[%an]%Creset\" --graph --date=format:'%y-%m-%d_%H:%M'
+
+[remote "aca47repo"]
+
+[giggle]
+        main-window-maximized = false
+        main-window-geometry = 838x1029+0+19
+        history-view-vpane-position = 829
+        file-view-vpane-position = 660
+        main-window-view = FileView
+[push]
+        default = simple
+[core]
+        autocrlf = input
+#[https]
+#[http]
+#        proxy = http://proxy:3128
